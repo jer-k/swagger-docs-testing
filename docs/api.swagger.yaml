@@ -1,0 +1,50 @@
+swagger: '2.0'
+info:
+  title: API
+  version: 1.0.0
+host: localhost:3000
+schemes:
+  - http
+basePath: /
+produces:
+  - application/json
+paths:
+  "/api/vehicles/{vehicle_id}/trade_reports":
+    parameters:
+      - name: vehicle_id
+        in: path
+        required: true
+        type: string
+      - name: tc-session-token
+        in: header
+        required: true
+        type: string
+    post:
+      tags: ["TradeReport"]
+      parameters:
+        - name: trade_report
+          in: body
+          required: true
+          schema:
+            $ref: "./schema/trade-report.yaml"
+      responses:
+        201:
+          description: Created Trade Report
+        403:
+          description: Invalid session
+        422:
+          description: Could not create Trade Report
+          schema:
+            $ref: "#/definitions/Error"
+
+  "/payments/calculate":
+     $ref: './calculate.yaml'
+
+
+definitions:
+  ErrorModel:
+    type: object
+    properties:
+      message:
+        type: string
+        description: Error message

@@ -1,0 +1,16 @@
+post:
+  summary: Calculate Payments
+  parameters:
+    - name: trade_report
+      in: body
+      required: true
+      schema:
+        $ref: "./schema/trade-report.yaml"
+  tags:
+    - Payments
+  responses:
+    '200':
+      schema:
+        type: array
+        items:
+          type: integer

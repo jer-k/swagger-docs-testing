@@ -1,0 +1,41 @@
+properties:
+  vehicle:
+    $ref: "#/definitions/Vehicle"
+  condition:
+    $ref: "#/definitions/Condition"
+  test1:
+    $ref: "./tester.yaml"
+  test2:
+    $ref: "#/definitions/Test2"
+  test3:
+    $ref: "#/definitions/Test3"
+
+definitions:
+  Vehicle:
+    description: Still deciding on what these should be
+    properties:
+      vin:
+        type: string
+      complete:
+        type: boolean
+      version:
+        type: integer
+      trim_id:
+        type: integer
+      tbd:
+        type: boolean
+
+  Condition:
+    description: Still deciding what these should be
+    properties:
+      tbd:
+        type: boolean
+
+  Test2:
+    $ref: "./tester.yaml"
+
+  Test3:
+    properties:
+      test:
+        type: string
+

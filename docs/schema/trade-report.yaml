@@ -3,12 +3,6 @@ properties:
     $ref: "#/definitions/Vehicle"
   condition:
     $ref: "#/definitions/Condition"
-  test1:
-    $ref: "./tester.yaml"
-  test2:
-    $ref: "#/definitions/Test2"
-  test3:
-    $ref: "#/definitions/Test3"
 
 definitions:
   Vehicle:
@@ -30,12 +24,4 @@ definitions:
     properties:
       tbd:
         type: boolean
-
-  Test2:
-    $ref: "./tester.yaml"
-
-  Test3:
-    properties:
-      test:
-        type: string
 
